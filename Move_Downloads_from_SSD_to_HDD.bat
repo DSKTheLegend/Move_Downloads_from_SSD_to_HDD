@@ -7,6 +7,14 @@ set /p before_size=<temp_size.txt
 del temp.txt
 del temp_size.txt
 
+:: Checking Disk Size before deletion
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /c | grep -v Mount" > disk_size.txt
+set /p before_disk_c=<disk_size.txt
+del disk_size.txt
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /d | grep -v Mount" > disk_size.txt
+set /p before_disk_d=<disk_size.txt
+del disk_size.txt
+
 :: Copying the downloads folder
 robocopy "C:\Users\<<username>>\Downloads" "D:\Dump Zone\Downloads_%date%" /E
 
@@ -23,22 +31,41 @@ del temp_size.txt
 echo Old Downloads Size : %before%
 echo New Downloads Size : %after%
 
-:: If download folder size before and after download is not same
+:: If download folder size before and after download is not same the script will exit without deleting anything
 IF NOT  %before_size% == %after_size% (
-	echo There's a difference in size of files copied.
-	echo Please check manually 
+echo There's a difference in size of files copied.
+echo Please check manually 
+set /P pause=""
+exit
 )
 
-:: If download folder size before and after download is same 
-IF %before_size% == %after_size% (
-	echo Copy Successful
-	set /P pause="Press ENTER to delete the original download folder. To cancel, press Ctrl+C"
-	powershell -Command "Remove-Item 'C:\Users\<<username>>\Downloads\*' -Recurse -Force"
-)
+echo Copy Successful
+:: Incase you want to stop the script from deleting the original downloads folder
+set /P pause="Press ENTER to delete the original download folder. To cancel, press Ctrl+C"
 
+:: Deleting the original downloads folder
+powershell -Command "Remove-Item 'C:\Users\<<username>>\Downloads\*' -Recurse -Force"
 
+:: Doing some disk space calculation
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /c | grep /c" > disk_size.txt
+set /p after_disk_c=<disk_size.txt
+echo "%after_disk_c%"
+del disk_size.txt
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /d | grep /d" > disk_size.txt
+set /p after_disk_d=<disk_size.txt
+del disk_size.txt
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /c | grep Mount"
+echo "%before_disk_c%"
+echo "%after_disk_c%"
+"c:\Program Files\Git\bin\sh.exe" -c "df -hP /d | grep Mount"
+echo "%before_disk_d%"
+echo "%after_disk_d%"
 
-:: A random pause before exiting the script so that you can see everything the script has done.
-:: This can be commented out if you're confident that the script works fine. 
+:: Script to see the file size of the copied items
+"c:\Program Files\Git\bin\sh.exe" -c "du -sh D:/Dump\ Zone/Downloads_%date%/* | sort -hr" > big_files.txt
+start cmd /k "D:\Batch Jobs\big_files.bat"
+
+:: A random pause before exiting the script so that you can see everything the script has done
+:: This can be commented out if you're confident that the script works fine
 :: This will totally automate the script with no manual intervention being required
 set /P pause=""

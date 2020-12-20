@@ -26,6 +26,11 @@ Maybe the command is supported in your system or maybe some syntax error you mad
 In order to debug it, remove the `@ECHO OFF` flag present in the top of the file and try to execute it from a command prompt.
 You'll start seeing all the errors.
 
+## What is that big_files.bat file for ?
+
+That file is there just to tell you about the size of the content you just moved :)
+
+
 ### In case you feel that I've made you're life simple or you're unable to use it properly, feel free to drop me an email at `dsklegend@live.com` and I might revert you as soon as I get some time.
 
 ### Thanks for reading this far.
