@@ -49,7 +49,6 @@ powershell -Command "Remove-Item 'C:\Users\<<username>>\Downloads\*' -Recurse -F
 :: Doing some disk space calculation
 "c:\Program Files\Git\bin\sh.exe" -c "df -hP /c | grep /c" > disk_size.txt
 set /p after_disk_c=<disk_size.txt
-echo "%after_disk_c%"
 del disk_size.txt
 "c:\Program Files\Git\bin\sh.exe" -c "df -hP /d | grep /d" > disk_size.txt
 set /p after_disk_d=<disk_size.txt
