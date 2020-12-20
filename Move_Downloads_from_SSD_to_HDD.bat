@@ -8,7 +8,7 @@ del temp.txt
 del temp_size.txt
 
 :: Copying the downloads folder
-robocopy "C:\Users\<<username>>\Downloads" "D:\Dump Zone\Downloads_%date%" /MIR /E
+robocopy "C:\Users\<<username>>\Downloads" "D:\Dump Zone\Downloads_%date%" /E
 
 :: Checking the size of the copied downloads folder
 "c:\Program Files\Git\bin\sh.exe" -c "du -sh D:/Dump\ Zone/Downloads_%date%" > temp.txt
