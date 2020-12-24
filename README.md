@@ -4,8 +4,8 @@
 
 If you're running a machine with a smaller C: drive and you tend to download a lot of stuff and then don't get time to clean it up, this script is for you.
 
-It's just a regular batch file which moves everything from "C:\Users\<<username>>\Downloads" to "D:\Dump Zone\Downloads_%date%"
-### Do replace <<username>> in the script with your window's username
+It's just a regular batch file which moves everything from "C:\Users\username\Downloads" to "D:\Dump Zone\Downloads_%date%"
+### Do replace username in the script with your window's username
 
 ## Requirements :- 
 
