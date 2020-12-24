@@ -61,9 +61,8 @@ echo "%before_disk_d%"
 echo "%after_disk_d%"
 
 :: Script to see the file size of the copied items
-"c:\Program Files\Git\bin\sh.exe" -c "du -sh D:/Dump\ Zone/Downloads_%date%/* | sort -hr" > big_files.txt
 start cmd /k "D:\Batch Jobs\big_files.bat"
-
+start cmd /k "D:\Batch Jobs\dump_zone_size.bat"
 :: A random pause before exiting the script so that you can see everything the script has done
 :: This can be commented out if you're confident that the script works fine
 :: This will totally automate the script with no manual intervention being required

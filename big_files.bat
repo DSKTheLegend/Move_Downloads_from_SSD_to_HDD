@@ -1,5 +1,5 @@
 @ECHO OFF
-more big_files.txt
+
+"c:\Program Files\Git\bin\sh.exe" -c "du -sh D:/Dump\ Zone/Downloads_%date%/* | sort -hr"
 set /P pause=""
-del big_files.txt
 exit
