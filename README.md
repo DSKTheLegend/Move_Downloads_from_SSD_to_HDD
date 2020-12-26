@@ -39,7 +39,7 @@ This will help keep track of how much junk is collected and you can do cleanup.
 #### P.S. Clean-up of all the files that it is creating is being done by the script itself, you don't need to worry about anything :)
 
 
-### In case you feel that I've made you're life simple or you're unable to use it properly, feel free to hit me up on `[Telegram](https://t.me/DskTheLegend)` or drop me an email at `[dsklegend@live.com](dsklegend@live.com)` and I might revert you as soon as I get some time.
+### In case you feel that I've made you're life simple or you're unable to use it properly, feel free to hit me up on [Telegram](https://t.me/DskTheLegend) or drop me an email at [dsklegend@live.com](dsklegend@live.com) and I might revert you as soon as I get some time.
 
 ### Thanks for reading this far.
 
