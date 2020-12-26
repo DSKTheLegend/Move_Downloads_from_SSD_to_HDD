@@ -2,7 +2,7 @@
 
 ##This file moves the Downloads folder from SSD to HDD
 
-<img src="./img/Demo.jpeg">
+<img src="./Img/Demo.jpeg">
 If you're running a machine with a smaller C: drive and you tend to download a lot of stuff and then don't get time to clean it up, this script is for you.
 
 It's just a regular batch file which moves everything from "C:\Users\username\Downloads" to "D:\Dump Zone\Downloads_%date%"
