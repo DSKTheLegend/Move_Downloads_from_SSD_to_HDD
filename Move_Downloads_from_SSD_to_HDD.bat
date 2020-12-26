@@ -54,11 +54,11 @@ del disk_size.txt
 set /p after_disk_d=<disk_size.txt
 del disk_size.txt
 "c:\Program Files\Git\bin\sh.exe" -c "df -hP /c | grep Mount"
-echo "%before_disk_c%"
-echo "%after_disk_c%"
+echo "%before_disk_c%  - BEFORE"
+echo "%after_disk_c%  - AFTER"
 "c:\Program Files\Git\bin\sh.exe" -c "df -hP /d | grep Mount"
-echo "%before_disk_d%"
-echo "%after_disk_d%"
+echo "%before_disk_d%  - BEFORE"
+echo "%after_disk_d%  - AFTER"
 
 :: Script to see the file size of the copied items
 start cmd /k "D:\Batch Jobs\big_files.bat"&
